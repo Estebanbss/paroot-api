@@ -41,6 +41,14 @@ namespace paroot_api.Controllers
      }
      }
 
+     [HttpGet("/all")]
+
+     public async Task<ActionResult<IEnumerable<UrlDtoOut>>> GetAllUrls()
+     {
+          var urls = await _urlService.GetAllUrls();
+          return urls.ToList();
+     }
+
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult<UrlDtoOut>> GetUrl(int id)

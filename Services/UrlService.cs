@@ -39,7 +39,21 @@ public class UrlService
                return url;
    
     }
-
+  
+    public async Task<IEnumerable<UrlDtoOut>> GetAllUrls()
+    {
+        return await _context.Urls.Select(u => new UrlDtoOut
+        {
+            Id = u.Id,
+            OriginalUrl = u.OriginalUrl,
+            ShortUrl = u.ShortUrl,
+            CreatedAt = u.CreatedAt,
+            Clicks = u.Clicks,
+            LastClickedAt = u.LastClickedAt,
+            LastClickedCountry = u.LastClickedCountry
+        }).ToListAsync();
+    }
+    
     public async Task<Url?> GetById(int id){
             return await _context.Urls.FirstOrDefaultAsync(u => u.Id == id);
     }
