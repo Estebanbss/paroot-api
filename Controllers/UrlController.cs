@@ -90,7 +90,40 @@ namespace paroot_api.Controllers
                return NotFound();
          }
 
+         [HttpPut("{id:int}")]
 
+           public async Task<IActionResult> UpdateUrl(int id, UrlDtoIn urlDtoIn)
+           {
+                  var url = await _urlService.GetById(id);
+     
+                  if (url is null)
+                  {
+                         return NotFound();
+                  }
+     
+                  url.OriginalUrl = urlDtoIn.OriginalUrl;
+                  url.ShortUrl = urlDtoIn.ShortUrl;
+     
+                  await _urlService.Update(url);
+     
+                  return NoContent();
+            }
+     
+            [HttpDelete("{id:int}")]
+     
+            public async Task<IActionResult> DeleteUrl(int id)
+            {
+                  var url = await _urlService.GetById(id);
+     
+                  if (url is null)
+                  {
+                         return NotFound();
+                  }
+     
+                  await _urlService.Delete(id);
+     
+                  return NoContent();
+            }
           
     }
 }

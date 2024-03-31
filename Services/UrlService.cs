@@ -110,4 +110,14 @@ public class UrlService
           
      }
 
+     public async Task Delete(int id)
+     {
+          var url = await GetById(id);
+          if (url is not null)
+          {
+               _context.Urls.Remove(url);
+               await _context.SaveChangesAsync();
+          }
+     }
+
 }
