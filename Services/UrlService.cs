@@ -18,24 +18,26 @@ public class UrlService
     public async Task<Url> CreateUrl(UrlDtoIn urlDtoIn)
     {
 
-        var random = new Random();
-        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        var randomStr = new string(Enumerable.Repeat(chars, 5).Select(s => s[random.Next(s.Length)]).ToArray());
 
-        var url = new Url
-        {        
-            OriginalUrl = urlDtoIn.OriginalUrl,
-            ShortUrl = randomStr,
-            CreatedAt = DateTime.Now,
-            Clicks = 0,
-            LastClickedAt = null,
-            LastClickedCountry = null
-        };
+               var random = new Random();
+               const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+               var randomStr = new string(Enumerable.Repeat(chars, 5).Select(s => s[random.Next(s.Length)]).ToArray());
 
-        _context.Urls.Add(url);
-        await _context.SaveChangesAsync();
+               var url = new Url
+               {        
+                    OriginalUrl = urlDtoIn.OriginalUrl,
+                    ShortUrl = randomStr,
+                    CreatedAt = DateTime.Now,
+                    Clicks = 0,
+                    LastClickedAt = null,
+                    LastClickedCountry = null
+               };
 
-        return url;
+               _context.Urls.Add(url);
+               await _context.SaveChangesAsync();
+
+               return url;
+   
     }
 
     public async Task<Url?> GetById(int id){
@@ -93,4 +95,5 @@ public class UrlService
 
           
      }
+
 }

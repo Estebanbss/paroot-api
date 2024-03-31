@@ -134,3 +134,4 @@ C:\Users\Esteban\Desktop\Code\paroot-api\obj\Debug\net8.0\refint\paroot-api.dll
 C:\Users\Esteban\Desktop\Code\paroot-api\obj\Debug\net8.0\paroot-api.pdb
 C:\Users\Esteban\Desktop\Code\paroot-api\obj\Debug\net8.0\paroot-api.genruntimeconfig.cache
 C:\Users\Esteban\Desktop\Code\paroot-api\obj\Debug\net8.0\ref\paroot-api.dll
+C:\Users\Esteban\Desktop\Code\paroot-api\obj\Debug\net8.0\paroot-api.sourcelink.json
