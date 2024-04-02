@@ -89,9 +89,10 @@ public class UrlService
      }
 
 
-     public async Task Update(Url url)
+     public async Task Update(int id, UrlDtoIn url)
      {
-          var urlExist = await GetById(url.Id);
+          var urlExist = await GetById(id);
+          
           if (urlExist is not null)
           {
                urlExist.OriginalUrl = url.OriginalUrl;

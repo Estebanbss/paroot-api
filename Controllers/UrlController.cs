@@ -85,20 +85,20 @@ namespace paroot_api.Controllers
          }
 
          [HttpPut("{id:int}")]
-
            public async Task<IActionResult> UpdateUrl(int id, UrlDtoIn urlDtoIn)
            {
+               if(id != urlDtoIn.Id)
+                  return BadRequest(new {message=$"the id = {id} does not match the urlDtoId id {urlDtoIn.Id} in the request body"});
+
                   var url = await _urlService.GetById(id);
      
                   if (url is null)
                   {
                          return NotFound();
                   }
+
      
-                  url.OriginalUrl = urlDtoIn.OriginalUrl;
-                  url.ShortUrl = urlDtoIn.ShortUrl;
-     
-                  await _urlService.Update(url);
+                  await _urlService.Update(id, urlDtoIn);
      
                   return NoContent();
             }
