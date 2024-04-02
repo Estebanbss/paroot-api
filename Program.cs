@@ -9,7 +9,10 @@ builder.Services.AddCors(options =>
                       policy  =>
                       {
                               policy.WithOrigins("https://paroot.somee.com",
-                         "http://paroot.somee.com")
+                         "https://estebanbss.github.io",
+                         "http://localhost:4200",
+                         "http://paroot.somee.com"
+                         )
                                                        .AllowAnyHeader()
                                                        .AllowAnyMethod();
                       });
