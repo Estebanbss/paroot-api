@@ -19,6 +19,7 @@ public partial class ParootDbContext : DbContext
     public virtual DbSet<Url> Urls { get; set; }
 
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Url>(entity =>
@@ -45,7 +46,7 @@ public partial class ParootDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("last_clicked_country");
             entity.Property(e => e.OriginalUrl)
-                .HasMaxLength(255)
+                .HasMaxLength(2000)
                 .IsUnicode(false)
                 .HasColumnName("original_url");
             entity.Property(e => e.ShortUrl)
