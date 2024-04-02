@@ -19,8 +19,7 @@ namespace paroot_api.Controllers
      [HttpPost]
      public async Task<IActionResult> CreateUrl(UrlDtoIn urlDtoIn)
      {
-     try
-     {
+
           var existingUrl = await _urlService.GetDtoByOriginalUrl(urlDtoIn.OriginalUrl);
           if (existingUrl != null)
           {
@@ -32,13 +31,8 @@ namespace paroot_api.Controllers
           var newUrl = await _urlService.CreateUrl(urlDtoIn);
           // Devolver un código 201 (Created) junto con la ubicación de la nueva URL
           // y el objeto de contenido (la URL recién creada)
-          return CreatedAtAction(nameof(GetUrl), new { shortUrl = newUrl.ShortUrl }, newUrl);
-     }
-     catch (Exception ex)
-     {
-          // Manejar cualquier excepción y devolver un error 500 (Internal Server Error)
-          return StatusCode(500, "Internal Server Error: " + ex.Message);
-     }
+          return CreatedAtAction(nameof(GetUrl), new { id = newUrl.Id }, newUrl);
+
      }
 
      [HttpGet("/all")]
