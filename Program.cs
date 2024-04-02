@@ -8,8 +8,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy  =>
                       {
-                              policy.WithOrigins("https://www.trelloclone.somee.com",
-                         "https://estebanbss.github.io")
+                              policy.WithOrigins("https://paroot.somee.com",
+                         "http://paroot.somee.com")
                                                        .AllowAnyHeader()
                                                        .AllowAnyMethod();
                       });

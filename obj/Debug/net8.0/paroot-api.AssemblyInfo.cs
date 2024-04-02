@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("paroot-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeb2afeeb85cb70ae892fad7edc554cb35e5d179")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5495140213a958f46d31847f49e9033885be6acd")]
 [assembly: System.Reflection.AssemblyProductAttribute("paroot-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("paroot-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
