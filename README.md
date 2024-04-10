@@ -61,7 +61,7 @@ To get started with the Paroot API, follow these steps:
 
 ## Contact
 
-If you have any questions or feedback, feel free to contact us at [email@example.com](mailto:email@example.com).
+If you have any questions or feedback, feel free to contact us at [juanesbs2003@hotmail.com](mailto:juanesbs2003@hotmail.com).
 
 ## Additional Information
 
